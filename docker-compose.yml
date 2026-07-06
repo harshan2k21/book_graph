@@ -1,0 +1,18 @@
+
+services:
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: bookgraph_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bookgraph
+    ports:
+      - "5433:5432"
+    volumes:
+      - bookgraph_pgdata:/var/lib/postgresql/data
+
+volumes:
+  bookgraph_pgdata:
+

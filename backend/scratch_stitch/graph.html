@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookGraph V2 - Connections Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e9e1dd",
+                    "primary": "#3525cd",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#e1dad6",
+                    "surface-container-low": "#f6f3ee",
+                    "surface": "#fcf9f4",
+                    "on-secondary-container": "#663500",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "secondary-container": "#fe932c",
+                    "background": "#fcf9f4",
+                    "outline-variant": "#c7c4d8",
+                    "on-secondary-fixed": "#2f1500",
+                    "tertiary-container": "#645f5c",
+                    "secondary": "#904d00",
+                    "on-primary-fixed": "#0f0069",
+                    "primary-container": "#4f46e5",
+                    "on-primary-container": "#dad7ff",
+                    "surface-bright": "#fcf9f4",
+                    "on-tertiary-fixed": "#1e1b19",
+                    "surface-container-highest": "#e5e2dd",
+                    "inverse-surface": "#31302d",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-surface-variant": "#464555",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e2dd",
+                    "surface-container-high": "#ebe8e3",
+                    "on-surface": "#1c1c19",
+                    "tertiary-fixed-dim": "#ccc5c2",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f0ede9",
+                    "surface-dim": "#dcdad5",
+                    "tertiary": "#4c4745",
+                    "on-background": "#1c1c19",
+                    "surface-tint": "#4d44e3",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "outline": "#777587",
+                    "primary-fixed": "#e2dfff",
+                    "inverse-primary": "#c3c0ff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#4a4643",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb77d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "container-max": "1200px",
+                    "base": "4px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "DM Sans"
+                    ],
+                    "label-md": [
+                            "JetBrains Mono"
+                    ],
+                    "body-md": [
+                            "DM Sans"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #1A1208;
+            color: #fcf9f4;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .halo-glow {
+            box-shadow: 0 0 20px rgba(254, 147, 44, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .halo-glow:hover {
+            box-shadow: 0 0 30px rgba(254, 147, 44, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .dashed-flow {
+            stroke-dasharray: 4;
+            animation: dash 2s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -8;
+            }
+        }
+        
+        /* Node positioning */
+        .node-1 { top: 30%; left: 20%; }
+        .node-2 { top: 50%; left: 45%; }
+        .node-3 { top: 20%; left: 60%; }
+        .node-4 { top: 70%; left: 30%; }
+        .node-5 { top: 60%; left: 70%; }
+        
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="relative h-screen w-screen font-body-md text-body-md">
+<!-- Shader Background -->
+
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-gutter py-md max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">BookGraph V2</div>
+<div class="flex gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-tertiary-container pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">My Library</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 scale-95 transition-transform duration-150" href="#">Connections Map</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="font-label-md text-label-md text-primary dark:text-primary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 flex items-center gap-sm">
+                    Add Book
+                </button>
+<button class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined">sensors</span>
+</button>
+<img alt="User avatar" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover" data-alt="A small, stylized circular avatar image for a user profile, featuring an abstract, low-poly landscape in warm sunset colors (oranges, pinks, soft purples) evoking a sci-fi atmosphere, perfectly fitting a cozy modern digital library interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBciuSdK0p_YJCv1Pjb5Q7_lZBaTWsB_GnwRHkpUyA0J-jdsYSPSLic3WJNBpT-jPWHiM63bbE1ES1vafMP0Z_o9qUqHyjpXsqCdNvJ6vU8GsfrMiNW7gnSWXySSGMSgyluI_DKU5Gv5tCDdGSl-J3MbcNKTJmWW-p6XQdj3d8GQ-4YTwHx7zYGf69qUBgjUmCAauP5RjT7rFd60okkNjTkkwUNepF56Ohm4ddHA6ewsA54MMbqrmdI5Pq96YoHlohab3yd05VsyQ"/>
+</div>
+</div>
+</nav>
+<!-- Graph Canvas Area -->
+<div class="absolute inset-0 top-[73px] z-10 overflow-hidden pointer-events-none">
+<!-- SVG for Edges -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 1;">
+<!-- Author (Green, solid, thick) -->
+<path d="M 25% 35% Q 35% 45% 45% 55%" fill="none" opacity="0.8" stroke="#10b981" stroke-width="3"></path>
+<!-- Era (Orange, dashed, animated) -->
+<path class="dashed-flow" d="M 45% 55% Q 55% 35% 60% 25%" fill="none" opacity="0.9" stroke="#f59e0b" stroke-width="2"></path>
+<!-- Theme (Purple, soft glow, semi-transparent) -->
+<path d="M 45% 55% Q 40% 65% 30% 75%" fill="none" filter="blur(2px)" opacity="0.4" stroke="#8b5cf6" stroke-width="4"></path>
+<path d="M 45% 55% Q 60% 60% 70% 65%" fill="none" filter="blur(2px)" opacity="0.4" stroke="#8b5cf6" stroke-width="4"></path>
+</svg>
+<!-- Nodes (Book Covers) -->
+<div class="absolute inset-0 w-full h-full pointer-events-auto" style="z-index: 2;">
+<!-- Node 1 -->
+<div class="absolute node-1 flex flex-col items-center group cursor-pointer transition-transform">
+<div class="w-16 h-24 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-md border border-white/10 flex items-center justify-center halo-glow relative overflow-hidden">
+<div class="absolute inset-0 bg-black/20"></div>
+<span class="font-headline-lg text-headline-lg text-white font-bold relative z-10">D</span>
+</div>
+<span class="mt-2 font-label-sm text-label-sm text-tertiary-fixed-dim opacity-70 group-hover:opacity-100 transition-opacity">Dune</span>
+</div>
+<!-- Node 2 (Active/Center) -->
+<div class="absolute node-2 flex flex-col items-center group cursor-pointer transition-transform scale-110 z-10">
+<div class="w-20 h-28 bg-gradient-to-br from-amber-800 to-red-900 rounded-md border border-secondary-container flex items-center justify-center halo-glow relative overflow-hidden">
+<div class="absolute inset-0 bg-black/10"></div>
+<span class="font-display-lg text-display-lg text-secondary-fixed font-bold relative z-10">F</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-secondary-fixed font-bold">Foundation</span>
+</div>
+<!-- Node 3 -->
+<div class="absolute node-3 flex flex-col items-center group cursor-pointer transition-transform">
+<div class="w-16 h-24 bg-gradient-to-br from-teal-900 to-emerald-900 rounded-md border border-white/10 flex items-center justify-center halo-glow relative overflow-hidden">
+<span class="font-headline-lg text-headline-lg text-white font-bold relative z-10">N</span>
+</div>
+<span class="mt-2 font-label-sm text-label-sm text-tertiary-fixed-dim opacity-70 group-hover:opacity-100 transition-opacity">Neuromancer</span>
+</div>
+<!-- Node 4 -->
+<div class="absolute node-4 flex flex-col items-center group cursor-pointer transition-transform">
+<div class="w-14 h-20 bg-gradient-to-br from-slate-800 to-slate-900 rounded-md border border-white/10 flex items-center justify-center halo-glow relative overflow-hidden">
+<span class="font-headline-md text-headline-md text-white font-bold relative z-10">1</span>
+</div>
+<span class="mt-2 font-label-sm text-label-sm text-tertiary-fixed-dim opacity-70 group-hover:opacity-100 transition-opacity">1984</span>
+</div>
+<!-- Node 5 -->
+<div class="absolute node-5 flex flex-col items-center group cursor-pointer transition-transform">
+<div class="w-16 h-24 bg-gradient-to-br from-blue-900 to-indigo-950 rounded-md border border-white/10 flex items-center justify-center halo-glow relative overflow-hidden">
+<span class="font-headline-lg text-headline-lg text-white font-bold relative z-10">H</span>
+</div>
+<span class="mt-2 font-label-sm text-label-sm text-tertiary-fixed-dim opacity-70 group-hover:opacity-100 transition-opacity">Hyperion</span>
+</div>
+</div>
+</div>
+<!-- Controls Overlay (Left) -->
+<div class="absolute bottom-lg left-lg z-20 flex flex-col gap-md">
+<!-- Legend -->
+<div class="bg-inverse-surface/80 backdrop-blur-md border border-outline-variant/20 rounded-xl p-md shadow-lg w-64">
+<h3 class="font-label-md text-label-md text-on-tertiary-container mb-sm">Connection Types</h3>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-sm">
+<div class="w-4 h-1 bg-emerald-500 rounded-full"></div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim">Shared Author</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-4 h-1 border-b-2 border-dashed border-amber-500"></div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim">Temporal Era</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-4 h-1 bg-purple-500 rounded-full opacity-60 blur-[1px]"></div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim">Thematic Link</span>
+</div>
+</div>
+</div>
+<!-- Slider -->
+<div class="bg-inverse-surface/80 backdrop-blur-md border border-outline-variant/20 rounded-xl p-md shadow-lg w-64">
+<div class="flex justify-between items-center mb-sm">
+<label class="font-label-md text-label-md text-on-tertiary-container">Connection Strength</label>
+<span class="font-label-sm text-label-sm text-secondary-container">0.8</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary-container" max="100" min="0" type="range" value="80"/>
+</div>
+</div>
+<!-- Side Panel (Right) - Book Details -->
+<div class="absolute top-[80px] bottom-lg right-lg w-80 bg-inverse-surface/90 backdrop-blur-xl border border-outline-variant/20 rounded-2xl shadow-2xl z-30 flex flex-col overflow-hidden transition-transform duration-300">
+<!-- Header Image area -->
+<div class="h-40 relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-50" data-alt="A sweeping, cinematic cosmic landscape depicting a futuristic silver city floating in a nebula of burnt orange and deep indigo, evoking the classic sci-fi novel Foundation, rendered in a high-end digital painting style suitable for a modern UI header background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLNVqve4rSISRpEfNo2VEvkYFm4IWZe6KuFPv8KkiUGzb03HfJiRPrsG-ko3u7GwWg3mzH9QWAxIIyFTx9hG_kQib76lX0ZnSxh1GyIiqyqVqnlNAtmf7xLMR8nkG3LL5xXwWvhde6zA34tFyoAcw82rWyVImSDj4t1j3B4cmd92PQcfjVmyxDnjx1ZhU0-7ciadoV1oJGEe9A1oPBwGvW20JhkZSt6D2Fg5kQrJSg5fgu9izqmxYKn74snF3Jf1FF2icWvJvDyFw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface to-transparent"></div>
+<button class="absolute top-sm right-sm text-on-tertiary-container hover:text-white transition-colors bg-black/20 rounded-full p-1">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-md flex-1 flex flex-col -mt-12 relative z-10">
+<!-- Mini Cover Overlap -->
+<div class="w-16 h-24 bg-gradient-to-br from-amber-800 to-red-900 rounded-md border border-secondary-container flex items-center justify-center shadow-lg mb-sm">
+<span class="font-headline-lg text-headline-lg text-secondary-fixed font-bold">F</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-white mb-xs">Foundation</h2>
+<p class="font-label-md text-label-md text-secondary-fixed-dim mb-md">Isaac Asimov • 1951</p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="px-2 py-1 rounded-full border border-secondary-container/50 font-label-sm text-label-sm text-secondary-fixed bg-secondary-container/10">Sci-Fi</span>
+<span class="px-2 py-1 rounded-full border border-purple-500/50 font-label-sm text-label-sm text-purple-200 bg-purple-500/10">Empire</span>
+<span class="px-2 py-1 rounded-full border border-emerald-500/50 font-label-sm text-label-sm text-emerald-200 bg-emerald-500/10">Psychohistory</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim line-clamp-4 mb-md">
+                For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Seldon, creator of the revolutionary science of psychohistory, can see into the future—to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years.
+            </p>
+<div class="mt-auto pt-md border-t border-outline-variant/10">
+<h4 class="font-label-sm text-label-sm text-on-tertiary-container mb-sm uppercase tracking-wider">Strongest Links</h4>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center justify-between group cursor-pointer p-1 -mx-1 rounded hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px] text-emerald-500">person</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">I, Robot</span>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity">Focus</span>
+</div>
+<div class="flex items-center justify-between group cursor-pointer p-1 -mx-1 rounded hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px] text-purple-500">auto_awesome</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">Dune</span>
+</div>
+<span class="font-label-sm text-label-sm text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">Focus</span>
+</div>
+</div>
+</div>
+<button class="mt-md w-full py-2 bg-primary-container hover:bg-primary-fixed text-on-primary-container hover:text-on-primary-fixed-variant rounded-lg font-label-md text-label-md transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+                Traverse Graph
+            </button>
+</div>
+</div>
+</body></html>
