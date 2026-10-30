@@ -1,6 +1,4 @@
-<<<<<<< Updated upstream
-# book_graph
-=======
+
 # 📚 BookGraph V2
 
 BookGraph is an AI-powered personal library cataloging and discovery application. It automatically analyzes your books and organizes them into a beautiful, interactive 2D graph network based on deep thematic, emotional, and narrative connections.
